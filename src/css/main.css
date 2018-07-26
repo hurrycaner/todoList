@@ -7,6 +7,11 @@ html, body, .todo {
     list-style-type: none;
 }
 
+.todo--loading {
+  opacity: 0.5;
+}
+
+
 .todo__input, .todo__item {
     margin: 10px;
 }
