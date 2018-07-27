@@ -18,13 +18,21 @@ module.exports = {
         test: /\.js|jsx$/,
         exclude: /node_modules/,
         include: [path.resolve(__dirname, 'src', 'js')],
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: ['transform-runtime', 'transform-object-rest-spread'],
-            presets: ['env', 'react'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['transform-runtime', 'transform-object-rest-spread'],
+              presets: ['env', 'react']
+            },
           },
-        },
+          {
+            loader: path.resolve(__dirname, 'lib', 'featureEnabler.js'),
+            options: {
+              filter: true
+            }
+          }
+        ]
       }, {
         test: /\.(sa|sc|c)ss$/,
         use: [

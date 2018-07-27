@@ -6,19 +6,15 @@ import Filter from '../components/filter';
 import {getFilter} from '../../redux/todo/reducers';
 import * as filterActions from '../../redux/todo/actions/filter';
 import {connect} from 'react-redux';
+import {isEnabled} from '../../lib/feature';
 
 class App extends Component {
 
-  isEnabled(name) {
-    return window.location.hash.split('#').includes(name);
-  }
-
   render() {
-    const enableRenderBottom = this.isEnabled('renderBottom');
-    const enableFilter = this.isEnabled('filter');
-    const enableFilterTop = enableRenderBottom &&
-      enableFilter &&
-      this.isEnabled('filterTop');
+    const enableRenderBottom = isEnabled('renderBottom');
+    const enableFilter = isEnabled('filter');
+    const enableFilterTop = enableRenderBottom && enableFilter &&
+      isEnabled('filterTop');
 
     const {filter} = this.props;
     return (
