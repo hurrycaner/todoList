@@ -3,7 +3,7 @@ import React from 'react';
 import Item from './item';
 
 const List = ({list, loading, toggleItem}) => (
-  <ul className={loading ? 'todo todo--loading' : 'todo'}>
+  <ul className={loading ? 'list list--loading' : 'list'}>
     {list.map(item => {
       return (
         <Item

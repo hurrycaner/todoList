@@ -1,14 +1,14 @@
 import React from 'react';
 
 export default ({inputChange, inputKeyPress, text, saveTask}) => (
-  <div className="todo__input">
+  <div className="form">
     <input
       type="text"
-      id="todoInput"
+      className="form__input"
       onChange={inputChange}
       onKeyPress={inputKeyPress}
       value={text}
     />
-    <button id="addTodo" onClick={saveTask}>Add</button>
+    <button className="form__button" onClick={saveTask}>Add</button>
   </div>
 )

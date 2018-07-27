@@ -5,13 +5,15 @@ export default ({id, text, done, toggleItem}) => {
     toggleItem(id);
   };
   return (
-    <li className={done ? 'todo__item todo__item--done' : 'todo__item'}>
+    <li className={done ? 'list__item list__item--done' : 'list__item'}>
       <input
         type="checkbox"
         defaultChecked={done}
         onChange={onChange}
+        className={done ? 'item__input item__input--done' : 'item__input'}
       />
-      {text}
+      <div className="item__text">{text}</div>
+
     </li>
   );
 };
